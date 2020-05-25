@@ -1,3 +1,5 @@
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,18 +21,18 @@ public class YandexPicture {
     private By chooseImageField = By.xpath("//input[@class = 'cbir-panel__file-input']");
     private By tags = By.xpath("//a[@class = 'Button2 Button2_width_auto Button2_view_default Button2_size_l Button2_type_link Button2_tone_gray Tags-Item']");
 
-    public void typeSearchField(String text) {
+/*    public void typeSearchField(String text) {
         driver.findElement(searchField).sendKeys(text);
     }
 
     public void clickSearchButton() {
         driver.findElement(searchButton).click();
-    }
-
+    }*/
+  //  @When("click search picture button")
     public void clickImageButton() {
         driver.findElement(searchImageButton).click();
     }
-
+   // @When("add picture link")
     public void addImage(String path) {
         driver.findElement(chooseImageField).sendKeys(path);
     }
@@ -43,7 +45,7 @@ public class YandexPicture {
         }
         return result;
     }
-
+   // @Then("check that tags have word")
     public boolean checkWord(ArrayList<String> list, String word){
         ArrayList<String> temp = new ArrayList<String>();
         String [] tempArray;
